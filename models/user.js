@@ -1,48 +1,19 @@
-import { model, Schema as _Shema } from 'mongoose';
-import timestamp from 'mongoose-timestamp';
-const production = model('Production')
-const Schema = _Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-    first_name: {
-        type: String,
-        required: true,
-    },
-    last_name: {
-        type: String,
-        required: true,
-    },
-    birthdate: {
-        type: Date,
-        required: true,
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    role: {
-        type: Number,
-        min: 1,
-        max: 3,
-        required: true,
-    },
-    education: String,
-    photo:String,
-    // production: [{
-    //     type: mongoose.Schema.Types.ObjectId, 
-    //     refer: production,
-    // }],
-    biography: String, 
-    deleted_at: {
-        type: Date, 
-        default: null,
-        null: true,
-    },
-});
-UserSchema.plugin(timestamp);
-export default User = model('User', UserSchema);
+const userSchema = new Schema({
+    name: { type: 'String', required: true },
+    last_name: { type: 'String', required: true },
+    birthdate: { type: Date, required: true },
+    email: { type: 'String', required: true },
+    password: { type: 'String', required: true },
+    role: { type: Number, default: 1 },
+    education: { type: 'String', required: true },
+    photo: { type: 'String' },
+    production: { type: [{ type: Schema.Types.ObjectId, ref: 'Product' }] },
+    biography: { type: 'String' },
+}, { timestamps: true });
+
+let User = mongoose.model('User', userSchema);
+
+export default User;

@@ -1,19 +1,23 @@
-import express from 'express';
-import connect  from 'mongoose';
-import json  from 'body-parser';
-import { mongoURI as db } from './config/keys';
-
-// const users = require('./routes/api/users').default.default.default;
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+let router = express.Router();
 
 const app = express();
+app.use(bodyParser.json());
+const db = require('./config/keys').mongoURI;
 
-app.use(json());
+require('./models/User');
 
-connect(db)
+mongoose.connect(db)
     .then(() => console.log('MongoDB connect...'))
     .catch(err => console.log(err))
 
-// app.use('/api/users', users);
+router.get('/', function (req, res) {
+    res.json({ 'message': 'Ping Successfull' });
+});
+
+app.use('/api', router);
 
 const port = process.env.port || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`));

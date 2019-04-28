@@ -1,0 +1,76 @@
+// User collection
+{
+    "_id": 1,
+    "name": "name_of_the_user",
+    "last_name": "last_name",
+    "date": "DD_MM_YYYY",
+    "email": "email@email.com",
+    "password": "cipher(pass)",
+    "role": "admin/cm/user",
+    "education": "bachelor/master/doctor",
+    "photo": "xd",
+    "articles": [
+        "articleId1",
+        "articleId2"
+    ],
+    "biography": "bio",
+    "created_at": "DD_MM_YYYY",
+    "deleted_at": "DD_MM_YYYY"
+}
+// Article collection
+{
+    "_id": 2,
+    "type": "article/project",
+    "title": "Article title",
+    "resources": [
+        {
+            "_id": "id",
+            "dataset": [
+                "_id_dataset1",
+                "_id_dataset2"
+            ],
+            "code": "url_github",
+            "introduction": "intro"
+        }
+    ],
+    "research_lines": [
+        "_id_research_line1",
+        "_id_research_line2"
+    ],
+    "photo": "photo",
+    "abstract": "abstract",
+    "pdf": "url"
+}
+// Dataset collection
+{
+    "_id": "id",
+    "name": "name",
+    "description": "desc",
+    "photo": "photo",
+    "url": "url"
+}
+// Research lines collection
+{
+    "_id": "id",
+    "name": "name",
+    "description": "desc",
+    "items": [
+        "prob1",
+        "prob2",
+        "prob3"
+    ],
+    "photo": "photo"
+}
+// Course collection
+{
+    "_id": "id",
+    "name": "name",
+    "description": "desc"
+}
+// News collection
+{
+    "_id": "id",
+    "title": "title",
+    "photo": "photo",
+    "description": "desc"
+}

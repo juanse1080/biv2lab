@@ -1,0 +1,23 @@
+{
+  "name": "bivl2ab",
+  "version": "1.0.0",
+  "description": "web page for biomedical imaging, vision and learning lab",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanse1080/bivl2ab_uis.git"
+  },
+  "keywords": [
+    "bivl2ab",
+    "uis"
+  ],
+  "author": "Juanse1080 and Sangohe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanse1080/bivl2ab_uis/issues"
+  },
+  "homepage": "https://github.com/juanse1080/bivl2ab_uis#readme"
+}
